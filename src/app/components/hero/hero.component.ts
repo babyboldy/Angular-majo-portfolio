@@ -13,15 +13,14 @@ export class HeroComponent implements OnInit, AfterViewInit {
   fullName = 'Majo in Tech';
   currentText = '';
   currentIndex = 0;
-  showCodeCard = false;
+  showCodeCard = true; // always show card
   utilisateur: Utilisateur | null = null;
   cvDownloadUrl: string | null = null;
 
   constructor(private api: PortfolioApiService) {}
 
   ngOnInit(): void {
-    this.checkScreenSize();
-    window.addEventListener('resize', () => this.checkScreenSize());
+    // always show code card; screen-size check removed
     this.api.getUtilisateurs().subscribe((users) => {
       const u = users[0];
       if (u) {
@@ -40,9 +39,7 @@ export class HeroComponent implements OnInit, AfterViewInit {
     this.startTypingAnimation();
   }
 
-  private checkScreenSize(): void {
-    this.showCodeCard = window.innerWidth > 1100;
-  }
+  // screen size logic removed; card is permanently visible
 
   private startTypingAnimation(): void {
     const textLength = 14; // "Majo in Tech" with space

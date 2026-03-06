@@ -29,12 +29,6 @@
             <div style="color:var(--secondary)">Open for work ✓</div>
           </div>
         </div>
-        <div class="social-links">
-          <a *ngFor="let link of socialLinks" [href]="link.href" [title]="link.title" class="social-link" target="_blank" rel="noopener noreferrer">
-            <i [class]="link.icon"></i>
-          </a>
-          <a [href]="'mailto:' + contactEmail" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
-        </div>
       </div>
 
       <div class="fade-in fade-in-delay-2">
