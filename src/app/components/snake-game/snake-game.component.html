@@ -1,0 +1,36 @@
+<section id="snake-game" class="section-pad">
+  <div class="container">
+    <div class="game-intro fade-in">
+      <div class="section-tag" style="justify-content:center">Mini Break</div>
+      <h2 class="section-title">Take a <span class="accent">Break</span></h2>
+      <p>Try this mini game while exploring my portfolio — you deserve it! 🎮</p>
+    </div>
+
+    <div class="game-container fade-in">
+      <div class="game-header">
+        <div class="game-title-bar">
+          <span style="color:var(--secondary)">●</span> snake.exe
+        </div>
+        <div class="game-score">Score: <span>{{ score }}</span> | Best: <span>{{ bestScore }}</span></div>
+      </div>
+
+      <canvas id="snakeCanvas" width="400" height="360"></canvas>
+
+      <div class="game-controls">
+        <div></div>
+        <button type="button" class="game-btn" (click)="changeDir(0, -1)">▲</button>
+        <div></div>
+        <button type="button" class="game-btn" (click)="changeDir(-1, 0)">◀</button>
+        <button type="button" class="game-btn center" (click)="toggleGame()">
+          <i class="fas" [class.fa-play]="!isRunning || isPaused" [class.fa-pause]="isRunning && !isPaused"></i>
+        </button>
+        <button type="button" class="game-btn" (click)="changeDir(1, 0)">▶</button>
+        <div></div>
+        <button type="button" class="game-btn" (click)="changeDir(0, 1)">▼</button>
+        <div></div>
+      </div>
+
+      <button type="button" class="game-start" (click)="startGame()">▶ Start Game</button>
+    </div>
+  </div>
+</section>

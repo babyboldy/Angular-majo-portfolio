@@ -1,0 +1,205 @@
+/* ============================================================
+   HERO SECTION
+============================================================ */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 64px;
+  position: relative; overflow: hidden;
+}
+
+.hero-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.blob1 {
+  width: 500px; height: 500px;
+  background: var(--primary);
+  top: -100px; right: -150px;
+}
+
+.blob2 {
+  width: 350px; height: 350px;
+  background: var(--secondary);
+  bottom: -50px; left: -100px;
+}
+
+.hero-content {
+  position: relative; z-index: 1;
+  /* add extra right padding so the main text shifts slightly left
+     and creates breathing room between the hero text and the
+     floating code card */
+  padding-right: 4rem;
+  /* constrain width to avoid text running too close to the card */
+  max-width: 600px;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0.4rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge .dot {
+  width: 7px; height: 7px;
+  background: var(--secondary);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.5;transform:scale(1.3)}
+}
+
+.hero-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title .typed-name { color: var(--primary); }
+
+.hero-title .cursor {
+  display: inline-block;
+  width: 3px; height: 1em;
+  background: var(--secondary);
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,100%{opacity:1}
+  50%{opacity:0}
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--text-muted);
+  margin: 1.25rem 0 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+}
+
+.hero-subtitle .hl { color: var(--secondary); }
+
+.hero-btns {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+}
+
+.btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: flex; gap: 2.5rem; margin-top: 3rem; flex-wrap: wrap;
+}
+
+.stat {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.stat-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.hero-code-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  line-height: 2;
+  position: relative;
+  overflow: hidden;
+  max-width: 420px;
+}
+
+.hero-code-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #FB923C, #22C55E);
+}
+
+.code-top {
+  display: flex; gap: 0.4rem; margin-bottom: 1rem;
+}
+
+.dot-r { width:10px;height:10px;border-radius:50%;background:#EF4444; }
+.dot-y { width:10px;height:10px;border-radius:50%;background:#F59E0B; }
+.dot-g { width:10px;height:10px;border-radius:50%;background:#22C55E; }
+
+.c-key { color: #7C3AED; }
+.c-func { color: #FB923C; }
+.c-str { color: #22C55E; }
+.c-num { color: #FB923C; }
+.c-comment { color: #64748B; }
+.c-obj { color: #38BDF8; }
+
+.code-card-container {
+  position: absolute;
+  right: max(2rem, 5%);
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 4rem; /* already provides separation from hero content */
+  /* push the card a little further right on wider screens so the gap
+     appears more pronounced */
+  @media (min-width: 768px) {
+    right: 10%;
+  }
+}

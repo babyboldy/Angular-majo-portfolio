@@ -1,0 +1,36 @@
+<section id="projects" class="section-pad">
+  <div class="container">
+    <div class="fade-in" style="margin-bottom:0">
+      <div class="section-tag">Portfolio</div>
+      <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+      <p class="section-desc">A selection of projects I've built — from platforms to packages.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card fade-in" *ngFor="let project of projects; let i = index" [style.animation-delay.ms]="i * 100">
+        <div class="project-thumb" [style.background]="project.gradient" [class.has-image]="project.imageUrl">
+          <img *ngIf="project.imageUrl" [src]="project.imageUrl" [alt]="project.title" class="project-thumb-img">
+          <div class="project-thumb-inner">{{ project.title.split(' ')[0] }}</div>
+          <div class="project-thumb-icon">{{ project.icon }}</div>
+          <div class="project-overlay">
+            <button class="project-link" *ngIf="project.githubUrl" (click)="openLink(project.githubUrl)" title="GitHub">
+              <i class="fab fa-github"></i>
+            </button>
+            <button class="project-link" *ngIf="project.liveUrl" (click)="openLink(project.liveUrl)" title="Voir le projet">
+              <i class="fas fa-external-link-alt"></i>
+            </button>
+            <button class="project-link" *ngIf="project.demoUrl" (click)="openLink(project.demoUrl)" title="Demo">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">{{ project.title }}</div>
+          <p class="project-desc">{{ project.description }}</p>
+          <div class="project-tech">
+            <span class="tech-tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

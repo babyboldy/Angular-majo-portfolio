@@ -1,0 +1,50 @@
+/* ============================================================
+   EXPERIENCE SECTION
+============================================================ */
+#experience { background: var(--card-bg); }
+.timeline { position: relative; margin-top: 3rem; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #FB923C, #22C55E);
+  border-radius: 2px;
+}
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.timeline-dot {
+  width: 42px; height: 42px;
+  min-width: 42px;
+  background: var(--card-bg);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  z-index: 1;
+  position: relative;
+  transition: var(--transition);
+}
+.timeline-item:hover .timeline-dot { background: var(--primary); }
+.timeline-content {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1;
+  transition: var(--transition);
+}
+.timeline-item:hover .timeline-content { border-color: var(--primary); }
+.timeline-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--secondary);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+}
+.timeline-role { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+.timeline-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; }

@@ -1,0 +1,19 @@
+<section id="experience" class="section-pad">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag">Journey</div>
+      <h2 class="section-title">My <span class="accent">Experience</span></h2>
+      <p class="section-desc">A timeline of my technical journey and key milestones.</p>
+    </div>
+    <div class="timeline">
+      <div *ngFor="let item of timeline; let i = index" class="timeline-item fade-in" [class.fade-in-delay-1]="i===1" [class.fade-in-delay-2]="i===2" [class.fade-in-delay-3]="i===3">
+        <div class="timeline-dot">{{ item.icon }}</div>
+        <div class="timeline-content">
+          <div class="timeline-date">{{ item.date }}</div>
+          <div class="timeline-role">{{ item.role }}<span *ngIf="item.company"> &#64; {{ item.company }}</span></div>
+          <p class="timeline-desc">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

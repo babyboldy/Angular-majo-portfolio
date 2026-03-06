@@ -1,0 +1,31 @@
+<nav>
+  <div class="nav-logo" (click)="scrollToSection('hero')">
+    <span class="bracket">&#123;</span> <span class="logo-word-majo">Majo</span> <span class="logo-word-tech">in Tech</span> <span class="bracket">&#125;</span>
+  </div>
+
+  <div class="nav-links">
+    <a (click)="scrollToSection('about')">About</a>
+    <a (click)="scrollToSection('skills')">Skills</a>
+    <a (click)="scrollToSection('projects')">Projects</a>
+    <a (click)="scrollToSection('experience')">Experience</a>
+    <a (click)="scrollToSection('contact')">Contact</a>
+  </div>
+
+  <div class="nav-actions">
+    <button id="themeToggle" (click)="toggleTheme()">
+      <i class="fas" [class.fa-moon]="isDarkTheme" [class.fa-sun]="!isDarkTheme"></i>
+    </button>
+    <button id="hamburger" class="hamburger" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu" [class.open]="isMobileMenuOpen">
+  <a (click)="scrollToSection('about')">About</a>
+  <a (click)="scrollToSection('skills')">Skills</a>
+  <a (click)="scrollToSection('projects')">Projects</a>
+  <a (click)="scrollToSection('experience')">Experience</a>
+  <a (click)="scrollToSection('contact')">Contact</a>
+</div>

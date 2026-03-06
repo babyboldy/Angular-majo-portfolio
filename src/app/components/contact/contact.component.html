@@ -1,0 +1,61 @@
+<section id="contact" class="section-pad">
+  <div class="container">
+    <div class="fade-in" style="text-align:center;max-width:600px;margin:0 auto 3rem;">
+      <div class="section-tag" style="justify-content:center">// Let's Connect</div>
+      <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+      <p class="section-desc" style="margin:0 auto">Have a project in mind or just want to chat? I'd love to hear from you!</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="fade-in fade-in-delay-1">
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-info-text">
+            <div class="contact-info-label">Email</div>
+            <div><a [href]="'mailto:' + contactEmail">{{ contactEmail }}</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-info-text">
+            <div class="contact-info-label">Location</div>
+            <div>Côte d'Ivoire 🇨🇮</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+          <div class="contact-info-text">
+            <div class="contact-info-label">Availability</div>
+            <div style="color:var(--secondary)">Open for work ✓</div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a *ngFor="let link of socialLinks" [href]="link.href" [title]="link.title" class="social-link" target="_blank" rel="noopener noreferrer">
+            <i [class]="link.icon"></i>
+          </a>
+          <a [href]="'mailto:' + contactEmail" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="fade-in fade-in-delay-2">
+        <div class="contact-form">
+          <div class="form-group">
+            <label class="form-label">// name</label>
+            <input class="form-input" type="text" placeholder="Your full name" [(ngModel)]="contactForm.name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">// email</label>
+            <input class="form-input" type="email" placeholder="your@email.com" [(ngModel)]="contactForm.email">
+          </div>
+          <div class="form-group">
+            <label class="form-label">// message</label>
+            <textarea class="form-textarea" placeholder="Tell me about your project..." [(ngModel)]="contactForm.message"></textarea>
+          </div>
+          <button class="btn-submit" (click)="sendMessage()" [disabled]="sending">
+            <i class="fas fa-paper-plane"></i> {{ sending ? 'Envoi...' : 'Envoyer' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

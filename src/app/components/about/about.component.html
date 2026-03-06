@@ -1,0 +1,39 @@
+<section id="about" class="section-pad">
+  <div class="container">
+    <div class="about-grid">
+      <div class="avatar-wrap fade-in">
+        <div class="avatar-deco"></div>
+        <div class="avatar-frame">
+          <div class="avatar-inner" *ngIf="!utilisateur?.photo_profil">👩🏾‍💻</div>
+          <img *ngIf="utilisateur?.photo_profil" [src]="utilisateur?.photo_profil" alt="Photo" class="avatar-img">
+        </div>
+        <div class="avatar-badge">
+          <i class="fas fa-circle" style="color:var(--secondary);font-size:0.5rem"></i>
+          Open to opportunities
+        </div>
+      </div>
+      <div class="fade-in fade-in-delay-1">
+        <div class="section-tag">About Me</div>
+        <h2 class="section-title">The Developer <span class="accent">Behind the Code</span></h2>
+        <p class="about-bio about-bio-api" *ngIf="utilisateur?.description">{{ utilisateur?.description }}</p>
+        <p class="about-bio" *ngIf="!utilisateur?.description">
+          I am <strong>Marie Joseph Kossonou</strong>, a software engineering student, builder, and tech storyteller.
+I’m passionate about web and mobile development, where creativity meets problem-solving.
+
+I enjoy designing and developing <strong>digital products that are clean, useful, and impactful</strong> from modern web platforms to intuitive mobile experiences.
+
+          <br><br>
+          When I’m not coding, I’m exploring new ideas, sharing insights through tech content, and building innovative projects that aim to make technology more accessible and meaningful.<br>
+          <br>My goal? Build technology that solves real problems and inspires people.
+          <strong><i>Code. Create. Innovate..</i></strong>
+        </p>
+        <div class="skills-chips">
+          <span class="chip" *ngFor="let skill of skills">{{ skill }}</span>
+        </div>
+        <button class="btn btn-primary" (click)="downloadCV()">
+          <i class="fas fa-download"></i> Download CV
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+<section id="hero">
+  <div class="hero-bg-blob blob1"></div>
+  <div class="hero-bg-blob blob2"></div>
+  <div class="container">
+    <div class="hero-content fade-in">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Available for freelance work
+      </div>
+      <div class="hero-title">
+        <span class="typed-name">{{ currentText }}</span><span class="cursor"></span>
+      </div>
+      <p class="hero-subtitle">
+        Web &amp; Mobile Developer | <span class="hl">Building modern digital solutions</span>
+      </p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" (click)="scrollToProjects()">
+          <i class="fas fa-code"></i> View Projects
+        </button>
+        <button class="btn btn-outline" (click)="downloadCV()">
+          <i class="fas fa-download"></i> Download CV
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Projects Built</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2+</div>
+          <div class="stat-label">Years Learning</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Tech Stacks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating code card -->
+  <div class="code-card-container" *ngIf="showCodeCard">
+    <div class="hero-code-card fade-in fade-in-delay-2">
+      <div class="code-top">
+        <span class="dot-r"></span>
+        <span class="dot-y"></span>
+        <span class="dot-g"></span>
+      </div>
+      <div><span class="c-key">const</span> <span class="c-func">developer</span> = &#123;</div>
+      <div>&nbsp;&nbsp;<span class="c-obj">name</span>: <span class="c-str">"{{ utilisateur ? (utilisateur.first_name + ' ' + utilisateur.last_name) : 'Marie Joseph Kossonou' }}"</span>,</div>
+      <div>&nbsp;&nbsp;<span class="c-obj">role</span>: <span class="c-str">"Web &amp; Mobile Dev"</span>,</div>
+      <div>&nbsp;&nbsp;<span class="c-obj">skills</span>: [<span class="c-str">"Python"</span>, <span class="c-str">"Flutter"</span>],</div>
+      <div>&nbsp;&nbsp;<span class="c-obj">available</span>: <span class="c-num">true</span>,</div>
+      <div>&nbsp;&nbsp;<span class="c-obj">coffee</span>: <span class="c-str">"☕ always"</span></div>
+      <div>&#125;</div>
+      <br>
+      <div><span class="c-comment">// Just a woman in Tech 👩💻</span></div>
+    </div>
+  </div>
+</section>

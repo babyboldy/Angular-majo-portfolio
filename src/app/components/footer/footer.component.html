@@ -1,0 +1,20 @@
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <!-- use HTML entities to avoid ICU parsing issues -->
+        <span class="accent">&#123;</span> <span class="logo-word-majo">Majo</span> <span class="logo-word-tech">in Tech</span> <span class="accent">&#125;</span>
+      </div>
+      <div class="footer-copy">
+        © {{ currentYear }} {{ brandName }} · Women in Tech <span>♥</span> <br>
+        <span style="font-size:0.65rem;opacity:0.5">// thank you for visiting — contact me for opportunities</span>
+      </div>
+      <div class="footer-social">
+        <a *ngFor="let link of socialLinks" [href]="link.href" [title]="link.title" target="_blank" rel="noopener noreferrer">
+          <i [class]="link.icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
